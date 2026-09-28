@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Find Doctors - HealthSync</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "outline": "#737784",
+                        "surface-container-high": "#dce9ff",
+                        "on-primary-container": "#bcceff",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-secondary-fixed-variant": "#005049",
+                        "surface-variant": "#d3e4fe",
+                        "outline-variant": "#c3c6d5",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#1d59c1",
+                        "secondary-container": "#86f2e4",
+                        "on-primary-fixed": "#001945",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "primary": "#003c90",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#6bd8cb",
+                        "surface-container-highest": "#d3e4fe",
+                        "primary-container": "#0f52ba",
+                        "inverse-primary": "#b0c6ff",
+                        "inverse-surface": "#213145",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#e5eeff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary": "#006a61",
+                        "on-tertiary-container": "#ffc0a7",
+                        "primary-fixed-dim": "#b0c6ff",
+                        "surface-dim": "#cbdbf5",
+                        "surface": "#f8f9ff",
+                        "tertiary-container": "#993900",
+                        "on-secondary-fixed": "#00201d",
+                        "tertiary-fixed": "#ffdbcd",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#d9e2ff",
+                        "on-surface": "#0b1c30",
+                        "on-background": "#0b1c30",
+                        "on-primary-fixed-variant": "#00419c",
+                        "on-surface-variant": "#434653",
+                        "tertiary": "#732900",
+                        "secondary-fixed": "#89f5e7",
+                        "on-secondary-container": "#006f66",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "surface-container-low": "#eff4ff",
+                        "background": "#f8f9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "2xl": "48px",
+                        "sm": "12px",
+                        "base": "8px",
+                        "md": "16px",
+                        "container-max": "1280px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "title-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0 font-body-md">
+<!-- TopAppBar -->
+<header class="bg-surface docked full-width top-0 border-b border-outline-variant flat no shadows">
+<div class="flex justify-between items-center w-full px-lg md:px-xl max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-[32px]">medical_services</span>
+<span class="font-display-lg text-display-lg text-primary tracking-tight">HealthSync</span>
+</div>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center gap-lg">
+<a class="text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors px-4 py-2 rounded-full" href="#">Home</a>
+<a class="text-primary font-bold border-b-2 border-primary font-label-md text-label-md hover:bg-surface-container-low transition-colors px-4 py-2" href="#">Search</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors px-4 py-2 rounded-full" href="#">Bookings</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors px-4 py-2 rounded-full" href="#">Profile</a>
+</nav>
+<div class="flex items-center">
+<img alt="User Profile Avatar" class="w-10 h-10 rounded-full object-cover" data-alt="A small, circular avatar portrait of a diverse patient smiling in a bright, clinical but warm setting. The lighting is soft and professional, conveying trust and health. The image uses a modern medical color palette with crisp whites and subtle blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArfu6wZ_OwFw56yx8Ptg4oVR2Tk0_hL-4z0Fa5WsrM6B7CqWvrfuJjYd0NSC8YqPbGRhn_sKrYip2CQVBW7TycURz1jlKE4f_JzDspRHuQL2HHcXwySqI7Gd8WI9HusbtV-QxOiyM74TQXCM6hZgiTmuw4ivWShZjnd55vuFnoFQy0M56C6GCq9GmqfhtKwobI1BL__JcndDLr7XPSI3ezOfWKcRKbrMVtE6rr-xmlt-FlwLS2lOgC"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="max-w-container-max mx-auto px-md md:px-lg py-xl">
+<!-- Filter Bar -->
+<section class="mb-xl">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-md bg-surface-container p-md rounded-xl shadow-sm border border-outline-variant/30">
+<div class="flex-1 w-full relative">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-xl pr-sm py-sm rounded-lg border border-outline-variant bg-surface focus:ring-2 focus:ring-primary focus:border-primary font-body-sm" placeholder="Search by name, specialty, or condition" type="text"/>
+</div>
+<div class="flex flex-wrap gap-sm w-full md:w-auto">
+<button class="flex items-center gap-xs px-md py-sm bg-surface border border-outline-variant rounded-lg text-on-surface font-label-sm hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                        Availability
+                    </button>
+<button class="flex items-center gap-xs px-md py-sm bg-surface border border-outline-variant rounded-lg text-on-surface font-label-sm hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+                        Distance
+                    </button>
+<button class="flex items-center gap-xs px-md py-sm bg-surface border border-outline-variant rounded-lg text-on-surface font-label-sm hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+                        Filters
+                    </button>
+</div>
+</div>
+</section>
+<!-- Doctor Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+<!-- Doctor Card 1 -->
+<article class="bg-surface rounded-xl border border-outline-variant/50 p-lg shadow-sm hover:shadow-md transition-shadow flex flex-col gap-md">
+<div class="flex items-start gap-md border-b border-outline-variant/30 pb-md">
+<img alt="Dr. Sarah Jenkins" class="w-20 h-20 rounded-lg object-cover" data-alt="A professional headshot of a female doctor in her 40s wearing a white lab coat over blue scrubs, smiling warmly against a bright, modern clinic background. The lighting is high-key and professional, inspiring confidence and trust." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZBOpvrsIdHJb5sTFONonm9LSxPLMYnNyQFNjpr2ec1NYs1PEhsemRhlNkSGrH3XiLaiUeysTPJ6h_HdaYswTrckvv996iOAMSh9a5N98VA7QGibYyVwB_xi1_B4umTa8qLy8hdArKGfyi76DA425kB1UwvUJIt58Teb75JGwhZ06B9_jYUpcDJ32cJGyZTptHH5aeuq2UcoY_2AARg9imBZsG-1sRf8MhpN6PpaV5_gm3TiORXiEg"/>
+<div class="flex-1">
+<h2 class="font-title-lg text-title-lg text-on-surface">Dr. Sarah Jenkins</h2>
+<span class="inline-block bg-primary-container/20 text-primary px-sm py-xs rounded-full font-label-sm mt-xs">Cardiology</span>
+<div class="flex items-center gap-xs mt-sm text-on-surface-variant font-body-sm">
+<span class="material-symbols-outlined fill text-[#facc15] text-[18px]">star</span>
+<span class="font-medium text-on-surface">4.9</span>
+<span>(128 reviews)</span>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-body-sm">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">work_history</span>
+                        15+ Years Exp.
+                    </div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+                        2.4 miles away
+                    </div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md py-sm rounded-lg hover:bg-on-primary-fixed-variant transition-colors mt-auto">Book Now</button>
+</article>
+<!-- Doctor Card 2 -->
+<article class="bg-surface rounded-xl border border-outline-variant/50 p-lg shadow-sm hover:shadow-md transition-shadow flex flex-col gap-md">
+<div class="flex items-start gap-md border-b border-outline-variant/30 pb-md">
+<img alt="Dr. Marcus Chen" class="w-20 h-20 rounded-lg object-cover" data-alt="A professional headshot of a male doctor in his 30s wearing a stethoscope around his neck, looking confident and approachable. The background is a slightly blurred, modern medical office with cool blue and white tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiefEq5YMIpiWJ6zMp_H00vxiZ6xW1Dw6RN4pCM8_Nd3vrri5N5-VfqQCSmgKpCsSiXJ0PkC1bD7_KXnux27pUcocoPIQCx0gFGJm_GC5g2BBDNqE7T97pz2Aid1kuMob3opGBjuMo_8O6OjMRG_gFsYfPOAmKzJsHIbHSD6nhMD3UN4gssFAEobuvkntDxms0r7bm6w9r2iR64MDJ4-SvQy3rqW4ZZ0qdB5IVPvCqprWE9mwX4pjX"/>
+<div class="flex-1">
+<h2 class="font-title-lg text-title-lg text-on-surface">Dr. Marcus Chen</h2>
+<span class="inline-block bg-primary-container/20 text-primary px-sm py-xs rounded-full font-label-sm mt-xs">Neurology</span>
+<div class="flex items-center gap-xs mt-sm text-on-surface-variant font-body-sm">
+<span class="material-symbols-outlined fill text-[#facc15] text-[18px]">star</span>
+<span class="font-medium text-on-surface">4.8</span>
+<span>(95 reviews)</span>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-body-sm">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">work_history</span>
+                        8 Years Exp.
+                    </div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+                        5.1 miles away
+                    </div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md py-sm rounded-lg hover:bg-on-primary-fixed-variant transition-colors mt-auto">Book Now</button>
+</article>
+<!-- Doctor Card 3 -->
+<article class="bg-surface rounded-xl border border-outline-variant/50 p-lg shadow-sm hover:shadow-md transition-shadow flex flex-col gap-md">
+<div class="flex items-start gap-md border-b border-outline-variant/30 pb-md">
+<img alt="Dr. Emily Roberts" class="w-20 h-20 rounded-lg object-cover" data-alt="A professional headshot of a female pediatrician in her 50s, wearing glasses and a warm smile. She is in a brightly lit room with subtle, calming colors in the background, conveying a sense of experience and care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwPKozJVuX9fpYQ1RHAU1vXR8LzPpnzK923WGcLXYv2AwPIYnAe2p7HK11THOL3wdn3JZTlnx_uSiFFoQ1_LqtvoaQqvu-5ssum9qmXmZFjRXlj3MvExlPRxxoBtSr8fpNYdGpEd_TqYBrGvQo9bYFsIctFaLBZt6i8QWBGvzEMO1M-63N5BUHs-dV1FqHUBJ5hr-XjtQI5NSjPaHcyn9uAoOjuhGz-uHhSonKtJHxc3uJIMccfyt8"/>
+<div class="flex-1">
+<h2 class="font-title-lg text-title-lg text-on-surface">Dr. Emily Roberts</h2>
+<span class="inline-block bg-primary-container/20 text-primary px-sm py-xs rounded-full font-label-sm mt-xs">Pediatrics</span>
+<div class="flex items-center gap-xs mt-sm text-on-surface-variant font-body-sm">
+<span class="material-symbols-outlined fill text-[#facc15] text-[18px]">star</span>
+<span class="font-medium text-on-surface">5.0</span>
+<span>(210 reviews)</span>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-body-sm">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">work_history</span>
+                        22 Years Exp.
+                    </div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+                        1.2 miles away
+                    </div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md py-sm rounded-lg hover:bg-on-primary-fixed-variant transition-colors mt-auto">Book Now</button>
+</article>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface-container docked full-width bottom-0 rounded-t-xl shadow-lg fixed left-0 w-full z-50 flex justify-around items-center px-4 py-3 md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors gap-1" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 gap-1" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-sm text-label-sm">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors gap-1" href="#">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-label-sm text-label-sm">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors gap-1" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

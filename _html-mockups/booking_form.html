@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Book Appointment Form - HealthSync</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-primary": "#ffffff",
+                "outline": "#737784",
+                "surface-container-high": "#dce9ff",
+                "on-primary-container": "#bcceff",
+                "on-tertiary-fixed": "#360f00",
+                "on-secondary-fixed-variant": "#005049",
+                "surface-variant": "#d3e4fe",
+                "outline-variant": "#c3c6d5",
+                "on-secondary": "#ffffff",
+                "surface-tint": "#1d59c1",
+                "secondary-container": "#86f2e4",
+                "on-primary-fixed": "#001945",
+                "on-tertiary-fixed-variant": "#7d2d00",
+                "primary": "#003c90",
+                "on-tertiary": "#ffffff",
+                "secondary-fixed-dim": "#6bd8cb",
+                "surface-container-highest": "#d3e4fe",
+                "primary-container": "#0f52ba",
+                "inverse-primary": "#b0c6ff",
+                "inverse-surface": "#213145",
+                "error-container": "#ffdad6",
+                "surface-container": "#e5eeff",
+                "inverse-on-surface": "#eaf1ff",
+                "secondary": "#006a61",
+                "on-tertiary-container": "#ffc0a7",
+                "primary-fixed-dim": "#b0c6ff",
+                "surface-dim": "#cbdbf5",
+                "surface": "#f8f9ff",
+                "tertiary-container": "#993900",
+                "on-secondary-fixed": "#00201d",
+                "tertiary-fixed": "#ffdbcd",
+                "on-error": "#ffffff",
+                "surface-bright": "#f8f9ff",
+                "surface-container-lowest": "#ffffff",
+                "on-error-container": "#93000a",
+                "error": "#ba1a1a",
+                "primary-fixed": "#d9e2ff",
+                "on-surface": "#0b1c30",
+                "on-background": "#0b1c30",
+                "on-primary-fixed-variant": "#00419c",
+                "on-surface-variant": "#434653",
+                "tertiary": "#732900",
+                "secondary-fixed": "#89f5e7",
+                "on-secondary-container": "#006f66",
+                "tertiary-fixed-dim": "#ffb596",
+                "surface-container-low": "#eff4ff",
+                "background": "#f8f9ff"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "gutter": "24px",
+                "2xl": "48px",
+                "sm": "12px",
+                "base": "8px",
+                "md": "16px",
+                "container-max": "1280px",
+                "xs": "4px",
+                "lg": "24px",
+                "xl": "32px"
+        },
+        "fontFamily": {
+                "title-lg": ["Inter"],
+                "body-lg": ["Inter"],
+                "label-md": ["Inter"],
+                "body-sm": ["Inter"],
+                "label-sm": ["Inter"],
+                "body-md": ["Inter"],
+                "headline-lg": ["Inter"],
+                "headline-lg-mobile": ["Inter"],
+                "display-lg": ["Inter"],
+                "headline-md": ["Inter"]
+        },
+        "fontSize": {
+                "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body {
+    background-color: theme('colors.background');
+    color: theme('colors.on-background');
+  }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid theme('colors.outline-variant');
+  }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col font-body-md">
+<!-- TopAppBar -->
+<header class="bg-surface border-b border-outline-variant docked full-width top-0 z-50">
+<div class="flex justify-between items-center w-full px-lg md:px-xl max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight">HealthSync</h1>
+</div>
+<!-- Suppressed top nav for transactional intent -->
+<div class="flex items-center gap-md">
+<img alt="User Profile Avatar" class="w-10 h-10 rounded-full object-cover shadow-sm border border-outline-variant" data-alt="A small circular avatar of a professional medical patient or doctor smiling slightly, well-lit, professional headshot in a modern clinical setting with soft natural light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7dFOL92CRp1m_hwZP4_Lrb6CAojzayqmlZeoMHWjW_7lNnNYhlbwPVapSB7qcWjL8zWjcA3bfeFYt_IBShSySJqThOg3cX7QOg5WNAiEVjtBzY5BWRJQNZF4SKz2u9sA4QHzh3WUvnX9D1-6oFdTXcyOMKBrv8Mhim71CuRCTOpgcR6uOiPU6n8Ax4yDw9CJ2mWIK9y2Hqz0dGC8-dKjSg3wilV0-gSLfVemnf-HZgHz5DW4qTb15"/>
+</div>
+</div>
+</header>
+<!-- Navigation Drawer (Desktop) - Suppressed for transactional intent -->
+<!-- BottomNavBar (Mobile) - Suppressed for transactional intent -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-lg md:px-xl py-2xl">
+<div class="max-w-3xl mx-auto">
+<!-- Progress Indicator -->
+<div class="mb-xl">
+<div class="flex items-center justify-between relative">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-surface-variant z-0 rounded-full"></div>
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1/3 h-1 bg-primary z-0 rounded-full transition-all duration-300" id="progress-bar"></div>
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md shadow-md border-2 border-primary">1</div>
+<span class="mt-xs font-label-sm text-primary">Service</span>
+</div>
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-surface text-on-surface-variant flex items-center justify-center font-label-md shadow-sm border-2 border-outline-variant transition-colors" id="step-2-indicator">2</div>
+<span class="mt-xs font-label-sm text-on-surface-variant transition-colors" id="step-2-label">Details</span>
+</div>
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-surface text-on-surface-variant flex items-center justify-center font-label-md shadow-sm border-2 border-outline-variant transition-colors" id="step-3-indicator">3</div>
+<span class="mt-xs font-label-sm text-on-surface-variant transition-colors" id="step-3-label">Insurance</span>
+</div>
+</div>
+</div>
+<!-- Form Container -->
+<div class="glass-card rounded-xl p-xl shadow-lg relative overflow-hidden">
+<!-- Step 1: Select Service -->
+<div class="transition-opacity duration-300" id="step-1">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-md">Select a Service</h2>
+<p class="font-body-md text-on-surface-variant mb-lg">Please choose the type of appointment you need today.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
+<!-- Service Options -->
+<label class="cursor-pointer group">
+<input checked="" class="peer sr-only" name="service" type="radio" value="general"/>
+<div class="p-md rounded-lg border-2 border-outline-variant bg-surface hover:bg-surface-container-low peer-checked:border-primary peer-checked:bg-primary-fixed transition-all duration-200 h-full flex flex-col items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 0;">stethoscope</span>
+<span class="font-title-lg text-on-surface">General Consultation</span>
+<span class="font-body-sm text-on-surface-variant">Standard checkups and routine health concerns.</span>
+</div>
+</label>
+<label class="cursor-pointer group">
+<input class="peer sr-only" name="service" type="radio" value="specialist"/>
+<div class="p-md rounded-lg border-2 border-outline-variant bg-surface hover:bg-surface-container-low peer-checked:border-primary peer-checked:bg-primary-fixed transition-all duration-200 h-full flex flex-col items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 0;">cardiology</span>
+<span class="font-title-lg text-on-surface">Specialist Visit</span>
+<span class="font-body-sm text-on-surface-variant">Cardiology, dermatology, or other specialized care.</span>
+</div>
+</label>
+<label class="cursor-pointer group">
+<input class="peer sr-only" name="service" type="radio" value="dental"/>
+<div class="p-md rounded-lg border-2 border-outline-variant bg-surface hover:bg-surface-container-low peer-checked:border-primary peer-checked:bg-primary-fixed transition-all duration-200 h-full flex flex-col items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 0;">dentistry</span>
+<span class="font-title-lg text-on-surface">Dental Care</span>
+<span class="font-body-sm text-on-surface-variant">Cleanings, exams, and dental procedures.</span>
+</div>
+</label>
+<label class="cursor-pointer group">
+<input class="peer sr-only" name="service" type="radio" value="vaccine"/>
+<div class="p-md rounded-lg border-2 border-outline-variant bg-surface hover:bg-surface-container-low peer-checked:border-primary peer-checked:bg-primary-fixed transition-all duration-200 h-full flex flex-col items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 0;">vaccines</span>
+<span class="font-title-lg text-on-surface">Vaccination</span>
+<span class="font-body-sm text-on-surface-variant">Flu shots, travel vaccines, and immunizations.</span>
+</div>
+</label>
+</div>
+<div class="flex justify-end mt-lg">
+<button class="bg-primary text-on-primary font-label-md px-lg py-sm rounded-lg hover:bg-on-primary-fixed-variant transition-colors shadow-sm flex items-center gap-xs h-12" onclick="nextStep(2)">
+              Continue
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Step 2: Patient Details (Hidden initially) -->
+<div class="hidden opacity-0 transition-opacity duration-300" id="step-2">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-md">Patient Details</h2>
+<p class="font-body-md text-on-surface-variant mb-lg">Tell us a bit about why you are visiting.</p>
+<div class="space-y-lg mb-xl">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div>
+<label class="block font-label-md text-on-surface mb-xs" for="firstName">First Name</label>
+<input class="w-full px-md py-sm rounded-lg border border-outline-variant bg-surface focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all font-body-md text-on-surface" id="firstName" placeholder="John" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-on-surface mb-xs" for="lastName">Last Name</label>
+<input class="w-full px-md py-sm rounded-lg border border-outline-variant bg-surface focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all font-body-md text-on-surface" id="lastName" placeholder="Doe" type="text"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-on-surface mb-xs" for="reason">Reason for Visit</label>
+<textarea class="w-full px-md py-sm rounded-lg border border-outline-variant bg-surface focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all font-body-md text-on-surface resize-none" id="reason" placeholder="Briefly describe your symptoms or reason for scheduling..." rows="3"></textarea>
+</div>
+<div>
+<label class="block font-label-md text-on-surface mb-xs">Preferred Time Slot (Optional)</label>
+<div class="flex gap-sm overflow-x-auto pb-xs">
+<div class="flex-shrink-0 px-md py-xs rounded-full border border-outline-variant font-label-sm text-on-surface-variant cursor-pointer hover:bg-surface-container-low hover:text-primary transition-colors">Morning (9AM - 12PM)</div>
+<div class="flex-shrink-0 px-md py-xs rounded-full border border-outline-variant font-label-sm text-on-surface-variant cursor-pointer hover:bg-surface-container-low hover:text-primary transition-colors">Afternoon (12PM - 4PM)</div>
+<div class="flex-shrink-0 px-md py-xs rounded-full border border-outline-variant font-label-sm text-on-surface-variant cursor-pointer hover:bg-surface-container-low hover:text-primary transition-colors">Evening (4PM - 7PM)</div>
+</div>
+</div>
+</div>
+<div class="flex justify-between mt-lg">
+<button class="text-primary font-label-md px-md py-sm rounded-lg hover:bg-surface-container-low transition-colors flex items-center gap-xs h-12" onclick="prevStep(1)">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+              Back
+            </button>
+<button class="bg-primary text-on-primary font-label-md px-lg py-sm rounded-lg hover:bg-on-primary-fixed-variant transition-colors shadow-sm flex items-center gap-xs h-12" onclick="nextStep(3)">
+              Continue
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Step 3: Insurance Info (Hidden initially) -->
+<div class="hidden opacity-0 transition-opacity duration-300" id="step-3">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-md">Insurance Information</h2>
+<p class="font-body-md text-on-surface-variant mb-lg">Provide your insurance details to verify coverage.</p>
+<div class="space-y-lg mb-xl">
+<div>
+<label class="block font-label-md text-on-surface mb-xs" for="provider">Insurance Provider</label>
+<select class="w-full px-md py-sm rounded-lg border border-outline-variant bg-surface focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all font-body-md text-on-surface appearance-none" id="provider">
+<option disabled="" selected="" value="">Select Provider</option>
+<option value="aetna">Aetna</option>
+<option value="bcbs">Blue Cross Blue Shield</option>
+<option value="cigna">Cigna</option>
+<option value="uhc">UnitedHealthcare</option>
+<option value="self">Self-Pay</option>
+</select>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div>
+<label class="block font-label-md text-on-surface mb-xs" for="memberId">Member ID</label>
+<input class="w-full px-md py-sm rounded-lg border border-outline-variant bg-surface focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all font-body-md text-on-surface" id="memberId" placeholder="e.g. ABC123456789" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-on-surface mb-xs" for="groupNumber">Group Number</label>
+<input class="w-full px-md py-sm rounded-lg border border-outline-variant bg-surface focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all font-body-md text-on-surface" id="groupNumber" placeholder="e.g. 987654" type="text"/>
+</div>
+</div>
+<div class="p-md bg-surface-container-low rounded-lg border border-outline-variant flex gap-sm items-start">
+<span class="material-symbols-outlined text-primary text-xl mt-xs">info</span>
+<p class="font-body-sm text-on-surface-variant">By submitting this form, you agree to our terms of service and consent to the verification of your insurance benefits prior to your appointment.</p>
+</div>
+</div>
+<div class="flex justify-between mt-lg">
+<button class="text-primary font-label-md px-md py-sm rounded-lg hover:bg-surface-container-low transition-colors flex items-center gap-xs h-12" onclick="prevStep(2)">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+              Back
+            </button>
+<button class="bg-primary text-on-primary font-label-md px-lg py-sm rounded-lg hover:bg-on-primary-fixed-variant transition-colors shadow-sm flex items-center gap-xs h-12" onclick="submitForm()">
+              Book Appointment
+              <span class="material-symbols-outlined text-sm">check_circle</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+    function updateProgress(step) {
+      const progressBar = document.getElementById('progress-bar');
+      const step2Ind = document.getElementById('step-2-indicator');
+      const step3Ind = document.getElementById('step-3-indicator');
+      const step2Lbl = document.getElementById('step-2-label');
+      const step3Lbl = document.getElementById('step-3-label');
+
+      // Update progress bar width
+      if (step === 1) progressBar.style.width = '33.33%';
+      else if (step === 2) progressBar.style.width = '66.66%';
+      else if (step === 3) progressBar.style.width = '100%';
+
+      // Update indicators styling based on step
+      if (step >= 2) {
+        step2Ind.classList.remove('bg-surface', 'text-on-surface-variant', 'border-outline-variant');
+        step2Ind.classList.add('bg-primary', 'text-on-primary', 'border-primary');
+        step2Lbl.classList.remove('text-on-surface-variant');
+        step2Lbl.classList.add('text-primary');
+      } else {
+        step2Ind.classList.add('bg-surface', 'text-on-surface-variant', 'border-outline-variant');
+        step2Ind.classList.remove('bg-primary', 'text-on-primary', 'border-primary');
+        step2Lbl.classList.add('text-on-surface-variant');
+        step2Lbl.classList.remove('text-primary');
+      }
+
+      if (step === 3) {
+        step3Ind.classList.remove('bg-surface', 'text-on-surface-variant', 'border-outline-variant');
+        step3Ind.classList.add('bg-primary', 'text-on-primary', 'border-primary');
+        step3Lbl.classList.remove('text-on-surface-variant');
+        step3Lbl.classList.add('text-primary');
+      } else {
+        step3Ind.classList.add('bg-surface', 'text-on-surface-variant', 'border-outline-variant');
+        step3Ind.classList.remove('bg-primary', 'text-on-primary', 'border-primary');
+        step3Lbl.classList.add('text-on-surface-variant');
+        step3Lbl.classList.remove('text-primary');
+      }
+    }
+
+    function switchView(hideId, showId) {
+      const hideEl = document.getElementById(hideId);
+      const showEl = document.getElementById(showId);
+      
+      hideEl.classList.add('opacity-0');
+      setTimeout(() => {
+        hideEl.classList.add('hidden');
+        showEl.classList.remove('hidden');
+        // brief timeout to allow display:block to apply before changing opacity for transition
+        setTimeout(() => {
+          showEl.classList.remove('opacity-0');
+        }, 50);
+      }, 300);
+    }
+
+    function nextStep(step) {
+      updateProgress(step);
+      switchView(`step-${step-1}`, `step-${step}`);
+    }
+
+    function prevStep(step) {
+      updateProgress(step);
+      switchView(`step-${step+1}`, `step-${step}`);
+    }
+
+    function submitForm() {
+      // Mock submit action
+      alert("Appointment booking submitted successfully!");
+    }
+  </script>
+</body></html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Availability Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary": "#ffffff",
+                      "outline": "#737784",
+                      "surface-container-high": "#dce9ff",
+                      "on-primary-container": "#bcceff",
+                      "on-tertiary-fixed": "#360f00",
+                      "on-secondary-fixed-variant": "#005049",
+                      "surface-variant": "#d3e4fe",
+                      "outline-variant": "#c3c6d5",
+                      "on-secondary": "#ffffff",
+                      "surface-tint": "#1d59c1",
+                      "secondary-container": "#86f2e4",
+                      "on-primary-fixed": "#001945",
+                      "on-tertiary-fixed-variant": "#7d2d00",
+                      "primary": "#003c90",
+                      "on-tertiary": "#ffffff",
+                      "secondary-fixed-dim": "#6bd8cb",
+                      "surface-container-highest": "#d3e4fe",
+                      "primary-container": "#0f52ba",
+                      "inverse-primary": "#b0c6ff",
+                      "inverse-surface": "#213145",
+                      "error-container": "#ffdad6",
+                      "surface-container": "#e5eeff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "secondary": "#006a61",
+                      "on-tertiary-container": "#ffc0a7",
+                      "primary-fixed-dim": "#b0c6ff",
+                      "surface-dim": "#cbdbf5",
+                      "surface": "#f8f9ff",
+                      "tertiary-container": "#993900",
+                      "on-secondary-fixed": "#00201d",
+                      "tertiary-fixed": "#ffdbcd",
+                      "on-error": "#ffffff",
+                      "surface-bright": "#f8f9ff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "error": "#ba1a1a",
+                      "primary-fixed": "#d9e2ff",
+                      "on-surface": "#0b1c30",
+                      "on-background": "#0b1c30",
+                      "on-primary-fixed-variant": "#00419c",
+                      "on-surface-variant": "#434653",
+                      "tertiary": "#732900",
+                      "secondary-fixed": "#89f5e7",
+                      "on-secondary-container": "#006f66",
+                      "tertiary-fixed-dim": "#ffb596",
+                      "surface-container-low": "#eff4ff",
+                      "background": "#f8f9ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "2xl": "48px",
+                      "sm": "12px",
+                      "base": "8px",
+                      "md": "16px",
+                      "container-max": "1280px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "xl": "32px"
+              },
+              "fontFamily": {
+                      "title-lg": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "headline-md": ["Inter"]
+              },
+              "fontSize": {
+                      "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        /* Ambient shadow levels from style guidance */
+        .shadow-level-1 { box-shadow: 0 2px 12px 0 rgba(0,0,0,0.04); }
+        .shadow-level-2 { box-shadow: 0 4px 20px 0 rgba(0,0,0,0.08); }
+        .shadow-level-3 { box-shadow: 0 8px 30px 0 rgba(0,0,0,0.12); }
+        
+        /* Custom toggle switch styling */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #003c90; /* primary */
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #003c90; /* primary */
+        }
+        
+        /* Layout utility */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 20rem 1fr;
+            min-height: 100vh;
+        }
+        @media (max-width: 1024px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen pb-20 md:pb-0">
+<!-- Navigation Drawer (Desktop) -->
+<nav class="hidden lg:flex flex-col h-full py-lg bg-surface dark:bg-surface-dim shadow-xl h-full w-80 fixed left-0 top-0 border-r border-outline-variant z-40">
+<div class="px-md mb-lg flex items-center gap-4">
+<img alt="Doctor Avatar" class="w-16 h-16 rounded-full object-cover shadow-level-1" data-alt="Professional headshot of a male doctor in his late 30s with a neat beard, wearing a white coat over a blue shirt, smiling warmly in a bright, modern clinical setting with soft natural light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJSYUCm7gYi8_vC-kYSTvqwVX7R-rSbMxwwuemfjw8HV6VonfaFVJ58Dv9io0037_u-TVP54lTMe3XjthJspC9k4Ke6Xlb0_c5qt-SbY9o2MeHDfglFOhHRyHMzF_xqBvPCg9YIQDPHnZWILqsntaUCaLRqI2LS28aJGRXc5joAToMbV73kC0r8K2A9VUpsPGXO56gXYNNIotbqNSToVyV2mmT-4gLlQqSNreebj7k6R1BzWBFqEAu"/>
+<div>
+<h2 class="font-title-lg text-title-lg text-primary">Dr. Alex Rivera</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">General Practitioner</p>
+<p class="font-label-sm text-label-sm text-outline mt-1">NPI: 1234567890</p>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto px-xs">
+<a class="flex items-center gap-md py-sm px-md text-on-surface-variant hover:bg-surface-container-high mx-2 rounded-lg transition-all mb-1" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-md text-label-md">Find Doctors</span>
+</a>
+<a class="flex items-center gap-md py-sm px-md text-on-surface-variant hover:bg-surface-container-high mx-2 rounded-lg transition-all mb-1" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-md text-label-md">My Appointments</span>
+</a>
+<a class="flex items-center gap-md py-sm px-md text-on-surface-variant hover:bg-surface-container-high mx-2 rounded-lg transition-all mb-1" href="#">
+<span class="material-symbols-outlined">folder_shared</span>
+<span class="font-label-md text-label-md">Medical Records</span>
+</a>
+<a class="flex items-center gap-md py-sm px-md bg-secondary-container text-on-secondary-container font-bold rounded-lg mx-2 mb-1 translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-md py-sm px-md text-on-surface-variant hover:bg-surface-container-high mx-2 rounded-lg transition-all mb-1" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-label-md text-label-md">Help Center</span>
+</a>
+</div>
+</nav>
+<!-- Top App Bar (Mobile) -->
+<header class="flex justify-between items-center w-full px-lg md:px-xl max-w-container-max mx-auto h-20 bg-surface border-b border-outline-variant lg:hidden sticky top-0 z-30">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary text-2xl">medical_services</span>
+<h1 class="font-display-lg text-headline-md text-primary tracking-tight">HealthSync</h1>
+</div>
+<div>
+<img alt="User Profile Avatar" class="w-10 h-10 rounded-full object-cover shadow-level-1" data-alt="Small round professional headshot of a male doctor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA448otpHmhNUlw2pbXPWQa0nJGFbt_F0i7CLxArrxS6KllMJgospeg9m-7G7z23zqAMT0j0N-QV52TsRsLXbl37ywj12oI1mDNMMpM0YoYUdKKe3Qz242lifzm5ON6HwM67GSuFcR83zea8zOmFj05vC8_CfYzJVlhFs-QzEdL39pdLbPDZ10KeqXPe97Szxm5L9cVXF54Cmps5ciQTahv5o4oPihdua-Oso0UZzaU8nvLcz2lJhdk"/>
+</div>
+</header>
+<!-- Main Content -->
+<main class="lg:ml-80 p-md md:p-lg xl:p-xl max-w-container-max mx-auto w-full">
+<!-- Header Section -->
+<div class="mb-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-md">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-background mb-xs">Availability Settings</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage your regular working hours and scheduled time off.</p>
+</div>
+<div class="flex gap-md">
+<button class="h-12 px-lg border border-outline-variant rounded-lg font-label-md text-label-md text-on-surface bg-surface hover:bg-surface-container-low transition-colors shadow-level-1">
+                    Discard Changes
+                </button>
+<button class="h-12 px-lg rounded-lg font-label-md text-label-md text-on-primary bg-primary hover:bg-primary-fixed-variant transition-colors shadow-level-2">
+                    Save Availability
+                </button>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-lg">
+<!-- Left Column: Weekly Schedule -->
+<div class="xl:col-span-2 space-y-lg">
+<div class="bg-surface rounded-xl border border-outline-variant p-lg shadow-level-1">
+<div class="flex justify-between items-center mb-lg border-b border-outline-variant pb-sm">
+<h2 class="font-title-lg text-title-lg text-on-background">Weekly Schedule</h2>
+<span class="material-symbols-outlined text-outline">calendar_month</span>
+</div>
+<div class="space-y-4">
+<!-- Monday -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-sm rounded-lg hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-md mb-sm sm:mb-0 w-32">
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 border-outline appearance-none cursor-pointer z-10 transition-transform duration-200" id="toggle-mon" name="toggle-mon" style="top: 2px; left: 2px;" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer" for="toggle-mon"></label>
+</div>
+<span class="font-label-md text-label-md text-on-background">Monday</span>
+</div>
+<div class="flex items-center gap-sm flex-1 max-w-md">
+<div class="flex-1 relative">
+<input class="w-full h-10 pl-sm pr-sm rounded-md border border-outline-variant bg-surface text-body-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" type="time" value="09:00"/>
+</div>
+<span class="text-outline-variant">-</span>
+<div class="flex-1 relative">
+<input class="w-full h-10 pl-sm pr-sm rounded-md border border-outline-variant bg-surface text-body-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" type="time" value="17:00"/>
+</div>
+<button class="p-2 text-outline hover:text-error transition-colors rounded-full hover:bg-error-container" title="Remove interval">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="hidden sm:block w-10 text-right">
+<button class="text-primary hover:text-primary-container opacity-0 group-hover:opacity-100 transition-opacity" title="Add interval">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<!-- Tuesday -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-sm rounded-lg hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-md mb-sm sm:mb-0 w-32">
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 border-outline appearance-none cursor-pointer z-10 transition-transform duration-200" id="toggle-tue" name="toggle-tue" style="top: 2px; left: 2px;" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer" for="toggle-tue"></label>
+</div>
+<span class="font-label-md text-label-md text-on-background">Tuesday</span>
+</div>
+<div class="flex flex-col gap-sm flex-1 max-w-md">
+<div class="flex items-center gap-sm">
+<div class="flex-1 relative">
+<input class="w-full h-10 pl-sm pr-sm rounded-md border border-outline-variant bg-surface text-body-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" type="time" value="09:00"/>
+</div>
+<span class="text-outline-variant">-</span>
+<div class="flex-1 relative">
+<input class="w-full h-10 pl-sm pr-sm rounded-md border border-outline-variant bg-surface text-body-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" type="time" value="12:00"/>
+</div>
+<button class="p-2 text-outline hover:text-error transition-colors rounded-full hover:bg-error-container" title="Remove interval">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex items-center gap-sm">
+<div class="flex-1 relative">
+<input class="w-full h-10 pl-sm pr-sm rounded-md border border-outline-variant bg-surface text-body-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" type="time" value="13:00"/>
+</div>
+<span class="text-outline-variant">-</span>
+<div class="flex-1 relative">
+<input class="w-full h-10 pl-sm pr-sm rounded-md border border-outline-variant bg-surface text-body-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" type="time" value="17:00"/>
+</div>
+<button class="p-2 text-outline hover:text-error transition-colors rounded-full hover:bg-error-container" title="Remove interval">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<div class="hidden sm:block w-10 text-right self-start mt-2">
+<button class="text-primary hover:text-primary-container opacity-0 group-hover:opacity-100 transition-opacity" title="Add interval">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<!-- Saturday (Inactive) -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-sm rounded-lg bg-surface-container-low opacity-60">
+<div class="flex items-center gap-md mb-sm sm:mb-0 w-32">
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 border-outline appearance-none cursor-pointer z-10 transition-transform duration-200" id="toggle-sat" name="toggle-sat" style="top: 2px; left: 2px;" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer" for="toggle-sat"></label>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Saturday</span>
+</div>
+<div class="flex-1 max-w-md text-center py-2">
+<span class="font-body-md text-body-md text-outline">Unavailable</span>
+</div>
+<div class="hidden sm:block w-10"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Overrides & Block Out -->
+<div class="space-y-lg">
+<!-- Block Out Time -->
+<div class="bg-surface rounded-xl border border-outline-variant p-lg shadow-level-1 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-secondary"></div>
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-title-lg text-title-lg text-on-background flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary">flight_takeoff</span>
+                            Time Off
+                        </h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md">Block out dates for vacations, conferences, or personal time.</p>
+<button class="w-full h-12 flex items-center justify-center gap-sm border-2 border-dashed border-secondary-fixed-dim rounded-lg font-label-md text-label-md text-secondary hover:bg-secondary-container transition-colors bg-surface-container-lowest">
+<span class="material-symbols-outlined">add_circle</span>
+                        Add Time Off
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Nav Bar (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 md:hidden bg-surface-container dark:bg-inverse-surface rounded-t-xl shadow-lg dark:border-t dark:border-outline-variant">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-sm text-label-sm">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed" href="#">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-label-sm text-label-sm">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-full px-4 py-1 scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple script to handle toggle visual state for demonstration
+        document.querySelectorAll('.toggle-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', (e) => {
+                const parentRow = e.target.closest('.flex');
+                if(e.target.checked) {
+                    parentRow.classList.remove('bg-surface-container-low', 'opacity-60');
+                    // Add inputs logic here if it were a real app
+                } else {
+                    parentRow.classList.add('bg-surface-container-low', 'opacity-60');
+                    // Hide inputs logic here
+                }
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Booking Details - HealthSync</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary": "#ffffff",
+                      "outline": "#737784",
+                      "surface-container-high": "#dce9ff",
+                      "on-primary-container": "#bcceff",
+                      "on-tertiary-fixed": "#360f00",
+                      "on-secondary-fixed-variant": "#005049",
+                      "surface-variant": "#d3e4fe",
+                      "outline-variant": "#c3c6d5",
+                      "on-secondary": "#ffffff",
+                      "surface-tint": "#1d59c1",
+                      "secondary-container": "#86f2e4",
+                      "on-primary-fixed": "#001945",
+                      "on-tertiary-fixed-variant": "#7d2d00",
+                      "primary": "#003c90",
+                      "on-tertiary": "#ffffff",
+                      "secondary-fixed-dim": "#6bd8cb",
+                      "surface-container-highest": "#d3e4fe",
+                      "primary-container": "#0f52ba",
+                      "inverse-primary": "#b0c6ff",
+                      "inverse-surface": "#213145",
+                      "error-container": "#ffdad6",
+                      "surface-container": "#e5eeff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "secondary": "#006a61",
+                      "on-tertiary-container": "#ffc0a7",
+                      "primary-fixed-dim": "#b0c6ff",
+                      "surface-dim": "#cbdbf5",
+                      "surface": "#f8f9ff",
+                      "tertiary-container": "#993900",
+                      "on-secondary-fixed": "#00201d",
+                      "tertiary-fixed": "#ffdbcd",
+                      "on-error": "#ffffff",
+                      "surface-bright": "#f8f9ff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "error": "#ba1a1a",
+                      "primary-fixed": "#d9e2ff",
+                      "on-surface": "#0b1c30",
+                      "on-background": "#0b1c30",
+                      "on-primary-fixed-variant": "#00419c",
+                      "on-surface-variant": "#434653",
+                      "tertiary": "#732900",
+                      "secondary-fixed": "#89f5e7",
+                      "on-secondary-container": "#006f66",
+                      "tertiary-fixed-dim": "#ffb596",
+                      "surface-container-low": "#eff4ff",
+                      "background": "#f8f9ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "2xl": "48px",
+                      "sm": "12px",
+                      "base": "8px",
+                      "md": "16px",
+                      "container-max": "1280px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "xl": "32px"
+              },
+              "fontFamily": {
+                      "title-lg": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "title-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-low text-on-surface font-sans min-h-screen">
+<!-- Top Navigation (Shell suppressed for this focused modal/overlay view) -->
+<!-- Main Content Canvas (Modal Overlay Effect) -->
+<main class="fixed inset-0 z-50 flex items-center justify-center p-md sm:p-lg bg-on-surface/40 backdrop-blur-sm overflow-y-auto">
+<!-- Modal Card -->
+<div class="bg-surface w-full max-w-4xl rounded-xl shadow-xl flex flex-col max-h-[795px] overflow-hidden">
+<!-- Modal Header -->
+<header class="flex justify-between items-center px-lg py-md border-b border-outline-variant bg-surface sticky top-0 z-10">
+<div>
+<h1 class="font-headline-md text-headline-md text-primary">Appointment Details</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Booking Ref: #HS-492-B8K</p>
+</div>
+<button aria-label="Close" class="p-2 rounded-full hover:bg-surface-container-high text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">close</span>
+</button>
+</header>
+<!-- Modal Body (Scrollable) -->
+<div class="p-lg overflow-y-auto">
+<!-- Status Banner -->
+<div class="bg-secondary-container/30 border border-secondary-container rounded-lg p-md mb-lg flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Confirmed</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Your appointment is scheduled. Please arrive 15 minutes early to complete any necessary paperwork.</p>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Left Column (Doctor & Time) -->
+<div class="md:col-span-2 flex flex-col gap-lg">
+<!-- Doctor Profile Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-lg shadow-sm">
+<div class="flex items-start gap-lg">
+<img alt="Doctor Profile" class="w-24 h-24 rounded-full object-cover shadow-sm" data-alt="Professional headshot of a female doctor in a modern clinical setting. She is wearing a white coat with a stethoscope around her neck, smiling warmly. The background is a clean, well-lit medical office with subtle blue and white tones, reflecting a trustworthy and professional healthcare environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmt1aLNN7uxOMwVmIjYItdtBSDJ2XA9l81VNkseIsZEiJjXa3rUsm950u7DVWDSdvzRWVlPqlcK9K5AnTnQclyjOFsBRGiBM2ZGttkcxMTyQrutjxPeQtKwFC6J9wGqSL5GNK-g-JdlcmhTBW-0KYSNS9Ano3voSj3Wrp3j2VQY-GNAcYN6rnWH3aAiBQQ-z6lNI6AbS7vWuW6fCd3gUII2tNsLUUBsog9Z4GYAvsl8VdfP-oQq4Ts"/>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-title-lg text-title-lg text-on-surface">Dr. Sarah Jenkins</h2>
+<p class="font-body-md text-body-md text-primary mt-1">Cardiologist</p>
+</div>
+<div class="bg-primary-container/20 text-primary px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm">4.9 (124 reviews)</span>
+</div>
+</div>
+<div class="mt-md flex flex-wrap gap-md">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">calendar_today</span>
+<span class="font-body-sm text-body-sm">Thursday, Oct 24, 2024</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">schedule</span>
+<span class="font-body-sm text-body-sm">10:30 AM - 11:15 AM (45m)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Preparation Instructions -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-lg shadow-sm">
+<h3 class="font-title-lg text-title-lg text-on-surface mb-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">medical_information</span>
+                                Patient Preparation
+                            </h3>
+<ul class="space-y-sm">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1" style="font-variation-settings: 'FILL' 0;">arrow_right</span>
+<p class="font-body-md text-body-md text-on-surface-variant">Fasting required: Please do not eat or drink anything (except water) for 8 hours prior to your appointment.</p>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1" style="font-variation-settings: 'FILL' 0;">arrow_right</span>
+<p class="font-body-md text-body-md text-on-surface-variant">Bring your current medication list and any recent test results.</p>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1" style="font-variation-settings: 'FILL' 0;">arrow_right</span>
+<p class="font-body-md text-body-md text-on-surface-variant">Wear comfortable, loose-fitting clothing.</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- Right Column (Location & Check-in) -->
+<div class="flex flex-col gap-lg">
+<!-- Location / Map Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg shadow-sm overflow-hidden flex flex-col h-full">
+<div class="h-48 w-full bg-surface-variant relative">
+<!-- Map Image Placeholder -->
+<img alt="Map Location" class="w-full h-full object-cover" data-alt="A clean, modern stylized street map of Seattle showing medical district. The map uses a light color palette with soft blues, grays, and whites. A prominent medical cross marker or pin indicates a specific location near a main intersection. The style is clear, professional, and easy to read, typical of a high-end application interface." data-location="Seattle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-QZcL730TWPyPfUQaVddhJoNOe6Bq5C_e7UwVUCAeqCfVKXkbi81xl-SKnGT9CMHbbbTMEptiSYzp9Hc_qf8pLDUevKolqgwqfKgJ9exY0A7eFB-3_f4SPLJQRXrU_OQD52fnpEOaFYI6fNfN6TJG-M0Qu8ZHED6hPH0nOp0Q2hZoJA-3gUdAP-iMQRG_k3wHCyZvoHMqsbxoXIxjqejV6DJYV9upxbnxmcxWdXfeG6kQgHTyIvgz"/>
+</div>
+<div class="p-md flex-1 flex flex-col justify-between">
+<div>
+<h4 class="font-title-lg text-title-lg text-on-surface mb-xs">Heart Health Clinic</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-start gap-2 mt-2">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">location_on</span>
+                                        1234 Wellness Way, Suite 300<br/>Seattle, WA 98101
+                                    </p>
+</div>
+<button class="mt-md w-full border border-primary text-primary hover:bg-primary-container/10 font-label-md text-label-md h-12 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">directions</span>
+                                    Get Directions
+                                </button>
+</div>
+</div>
+<!-- Check-in QR -->
+<div class="bg-surface-container-highest rounded-lg p-lg shadow-sm flex flex-col items-center justify-center text-center">
+<p class="font-label-md text-label-md text-on-surface-variant mb-md">Scan at kiosk upon arrival</p>
+<div class="bg-white p-4 rounded-lg shadow-sm mb-md inline-block">
+<img alt="Check-in QR Code" class="w-32 h-32" data-alt="A clean, high-contrast QR code generated in black and white. It is perfectly square and clearly defined, suitable for scanning. The QR code is presented alone against a stark white background, looking like a standard digital check-in token used in modern mobile applications." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXMt-a9aEfecFyIS_8r4908MfMx7-klbKRu9fEzLenVHMR7amYlvylQVIR7aig5SulwuvNpy9mZOFG5urqzyj0qUzrxcTd24oft0MCL3s78IoFa7ya-Yb8dPSM0ZCBtzm_K8LmMNBgPsXeE4K0Tfu3KTlE2MOtbSp6fD147FrNVA6Yaz92V74rt-806tJMoQu_MdubnbMczeFiFPx1E3AV975tDrLYYi85B6JsWQ0a-Ov8cfid2iJy"/>
+</div>
+<button class="text-primary hover:text-primary-fixed-variant font-label-md text-label-md flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">chromecast_2</span>
+                                Add to Apple Wallet
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Footer Actions -->
+<footer class="p-md sm:p-lg border-t border-outline-variant bg-surface flex flex-col sm:flex-row justify-end gap-md">
+<button class="h-12 px-lg border border-outline text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-variant transition-colors flex-1 sm:flex-none">
+                    Reschedule
+                </button>
+<button class="h-12 px-lg border border-error text-error hover:bg-error-container/20 font-label-md text-label-md rounded-lg transition-colors flex-1 sm:flex-none">
+                    Cancel
+                </button>
+</footer>
+</div>
+</main>
+</body></html>

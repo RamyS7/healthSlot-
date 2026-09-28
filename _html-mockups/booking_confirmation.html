@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Booking Confirmation - HealthSync</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "outline": "#737784",
+                        "surface-container-high": "#dce9ff",
+                        "on-primary-container": "#bcceff",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-secondary-fixed-variant": "#005049",
+                        "surface-variant": "#d3e4fe",
+                        "outline-variant": "#c3c6d5",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#1d59c1",
+                        "secondary-container": "#86f2e4",
+                        "on-primary-fixed": "#001945",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "primary": "#003c90",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#6bd8cb",
+                        "surface-container-highest": "#d3e4fe",
+                        "primary-container": "#0f52ba",
+                        "inverse-primary": "#b0c6ff",
+                        "inverse-surface": "#213145",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#e5eeff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary": "#006a61",
+                        "on-tertiary-container": "#ffc0a7",
+                        "primary-fixed-dim": "#b0c6ff",
+                        "surface-dim": "#cbdbf5",
+                        "surface": "#f8f9ff",
+                        "tertiary-container": "#993900",
+                        "on-secondary-fixed": "#00201d",
+                        "tertiary-fixed": "#ffdbcd",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#d9e2ff",
+                        "on-surface": "#0b1c30",
+                        "on-background": "#0b1c30",
+                        "on-primary-fixed-variant": "#00419c",
+                        "on-surface-variant": "#434653",
+                        "tertiary": "#732900",
+                        "secondary-fixed": "#89f5e7",
+                        "on-secondary-container": "#006f66",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "surface-container-low": "#eff4ff",
+                        "background": "#f8f9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "2xl": "48px",
+                        "sm": "12px",
+                        "base": "8px",
+                        "md": "16px",
+                        "container-max": "1280px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "title-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #003c90;
+            opacity: 0;
+            animation: fall 3s ease-in-out infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        .success-circle {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawCircle 1s ease-out forwards;
+        }
+
+        .success-check {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawCheck 0.5s 0.8s ease-out forwards;
+        }
+
+        @keyframes drawCircle {
+            to { stroke-dashoffset: 0; }
+        }
+
+        @keyframes drawCheck {
+            to { stroke-dashoffset: 0; }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen font-body-md text-on-background antialiased flex flex-col relative overflow-hidden">
+<!-- Confetti Container -->
+<div class="absolute inset-0 pointer-events-none z-0" id="confetti-container"></div>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center p-md md:p-lg relative z-10">
+<div class="max-w-2xl w-full mx-auto">
+<div class="bg-surface rounded-xl shadow-lg border border-outline-variant p-xl md:p-2xl flex flex-col items-center text-center">
+<!-- Animated Success Icon -->
+<div class="w-24 h-24 mb-lg relative flex items-center justify-center">
+<svg class="w-full h-full text-secondary" fill="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<circle class="success-circle" cx="50" cy="50" fill="none" r="45" stroke="currentColor" stroke-width="6"></circle>
+<path class="success-check" d="M30 50 L45 65 L70 35" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"></path>
+</svg>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary mb-md tracking-tight">Appointment Confirmed!</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-md mx-auto">
+                    Your appointment with Dr. Alex Rivera has been successfully scheduled. We've sent a confirmation email with details.
+                </p>
+<!-- Booking Summary Card -->
+<div class="w-full bg-surface-container-low rounded-lg p-lg border border-surface-variant mb-xl text-left shadow-sm">
+<h2 class="font-title-lg text-title-lg text-on-surface mb-md pb-xs border-b border-outline-variant">Booking Summary</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary mt-xs" data-icon="event" data-weight="fill" style="font-variation-settings: 'FILL' 1;">event</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Date</p>
+<p class="font-body-md text-body-md text-on-surface font-medium">Monday, Oct 24, 2023</p>
+</div>
+</div>
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary mt-xs" data-icon="schedule" data-weight="fill" style="font-variation-settings: 'FILL' 1;">schedule</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Time</p>
+<p class="font-body-md text-body-md text-on-surface font-medium">10:00 AM - 10:30 AM</p>
+</div>
+</div>
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary mt-xs" data-icon="person" data-weight="fill" style="font-variation-settings: 'FILL' 1;">person</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Doctor</p>
+<p class="font-body-md text-body-md text-on-surface font-medium">Dr. Alex Rivera</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Cardiology</p>
+</div>
+</div>
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary mt-xs" data-icon="location_on" data-weight="fill" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Location</p>
+<p class="font-body-md text-body-md text-on-surface font-medium">Downtown Clinic</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">123 Med Ave, Suite 400</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col md:flex-row gap-md w-full md:w-auto justify-center">
+<button class="flex items-center justify-center gap-sm bg-primary text-on-primary font-label-md text-label-md px-xl py-sm rounded-full h-12 shadow-md hover:bg-primary-fixed-variant transition-colors w-full md:w-auto">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+                        Add to Calendar
+                    </button>
+<a class="flex items-center justify-center gap-sm bg-surface-container text-primary font-label-md text-label-md px-xl py-sm rounded-full h-12 border border-outline-variant hover:bg-surface-container-high transition-colors w-full md:w-auto" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+                        Return to Home
+                    </a>
+</div>
+</div>
+<!-- Minimal Footer Links (Optional for this context, but good for trust) -->
+<div class="mt-lg text-center">
+<a class="font-body-sm text-body-sm text-primary hover:underline" href="#">Manage Appointment</a>
+<span class="mx-sm text-outline-variant">•</span>
+<a class="font-body-sm text-body-sm text-primary hover:underline" href="#">Need Help?</a>
+</div>
+</div>
+</main>
+<script>
+        // Simple Confetti effect
+        const container = document.getElementById('confetti-container');
+        const colors = ['#003c90', '#006a61', '#86f2e4', '#d9e2ff'];
+
+        for (let i = 0; i < 50; i++) {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            confetti.style.animationDelay = Math.random() * 2 + 's';
+            container.appendChild(confetti);
+        }
+    </script>
+</body></html>
